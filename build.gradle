@@ -1,3 +1,11 @@
+bootJar {
+    archiveClassifier.set('boot')
+}
+
+jar {
+    archiveClassifier.set('')
+}
+
 plugins {
 	id 'java'
 	id 'war'
