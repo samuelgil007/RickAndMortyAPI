@@ -3,6 +3,19 @@
  + /episode/{id}
  + Tipo: GET
  
+ ## PUNTO 2:
+ + /location
+ + Tipo: POST
+ + Body: {   "name": "earth",
+    "type": "2",
+    "dimension": "3l2",
+    "url": "https://www.google.com/"
+}
+-----
+ + /location/getall
+ + Tipo: GET
+ 
+ 
 ## PUNTO 3:
  + /happy
  + Tipo: POST
