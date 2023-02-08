@@ -1,7 +1,5 @@
 package com.RickMorty.P1.model;
 
-import com.fasterxml.jackson.annotation.JsonInclude;
-
 public class Character {
 
     private String id;

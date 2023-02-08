@@ -6,6 +6,7 @@ import com.RickMorty.P1.model.Location;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.stereotype.Service;
+import org.springframework.web.client.HttpClientErrorException;
 import org.springframework.web.client.RestTemplate;
 
 import java.util.ArrayList;
@@ -18,11 +19,18 @@ public class P1Service {
     private String rickMortyAPI;
 
     public Episode findEpisodeById(String id) {
-        Episode episode;
+        Episode episode = new Episode();
         RestTemplate restTemplate = new RestTemplateBuilder()
                 .rootUri(rickMortyAPI)
                 .build();
-        episode = restTemplate.getForObject("/{id}", Episode.class, id);
+
+        try{
+            episode = restTemplate.getForObject("/{id}", Episode.class, id);
+        }
+        catch(HttpClientErrorException e){
+            return episode;
+        }
+
 
         List<Character> characterList = new ArrayList<>();
         for (Character character : episode.getCharacters()) {
