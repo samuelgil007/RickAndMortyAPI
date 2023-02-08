@@ -1,4 +1,5 @@
 # RickAndMortyAPI
++ Para usarlo hay que tener JAVA 17 en la maquina, la base de datos es una que esta en la nube que ofrece una sola conexión.
 ## PUNTO 1:
  + /episode/{id}
  + Tipo: GET
